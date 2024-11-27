@@ -1,0 +1,164 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh;
+  height: 100%; /* This assumes the parent element has a fixed height */
+  border: 2px solid #7496ab;
+  border-radius: 8px;
+  margin-left: 2%;
+  overflow: hidden; /* Ensures content doesn’t overflow container */
+  width: 96%;
+  margin-left: 2%;
+}
+
+.message-box {
+  flex: 1; 
+  padding: 16px;
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+  
+  .message {
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 75%;
+    height: auto;
+    overflow-wrap: break-word; 
+    white-space: pre-wrap; 
+  }
+  
+  .user-message {
+    align-self: flex-end;
+    background-color: #fff;
+    color: #000;
+    height: auto;
+  }
+  
+  .echo-message {
+    align-self: flex-start;
+    background-color: #114e85;
+    color: #ffffff;
+    height: auto;
+  }
+  
+  .typing-dots {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    bottom: 16px;
+    left: 16px;
+    padding-bottom: 20px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #114e85;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .input-box {
+    display: flex;
+    padding: 8px;
+    border-top: 2px solid #7496ab;
+    align-items: center;
+  }
+  
+  .input-textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    height: 100%;
+    max-height: 200px; 
+    overflow-y: auto; 
+    resize: none; 
+  }
+  .send-button {
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #7496ab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .send-button:hover:not(.disabled) {
+    background-color: #15a1ff; 
+    transform: scale(1.1) rotate(45deg); 
+    transition: background-color 0.5s ease, transform 0.5s ease; 
+  }
+  
+  
+  .send-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .svg-wrapper-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .svg-wrapper svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .send-button .svg-wrapper-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .send-button .svg-wrapper svg.square {
+    transform: rotate(0deg) scale(1);
+  }
+  
+  .send-button .svg-wrapper svg.arrow {
+    transform: rotate(0deg) scale(1);
+  }
+  
+  .send-button svg.animate-square {
+    transform: rotate(90deg) scale(1);
+  }
+  
+  .send-button svg.animate-arrow {
+    transform: rotate(0deg) scale(1);
+  }
+.bg-light-glass{
+  background-color: rgba( 0, 0, 0, 0.01 );
+  backdrop-filter: blur( 2px );
+  -webkit-backdrop-filter: blur( 2px );
+}
