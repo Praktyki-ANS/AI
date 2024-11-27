@@ -10,7 +10,6 @@ models = {}
 @asynccontextmanager
 async def lifespan(app):
     print("Loading model")
-    models["hate_spitch"] = get_model(MODEL_PATH)
     yield
     print("Unloading model")
     models.clear()
