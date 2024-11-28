@@ -43,7 +43,18 @@
     color: #ffffff;
     height: auto;
   }
-  
+  .error-message {
+    align-self: center;
+    background-color: rgba(0,0,0,0.5);
+    border: solid red 1px;
+    box-shadow: red 10 12 14;
+    color: red;
+    height: auto;
+    min-width: 80%;
+    text-align: center;
+    min-height: 10%;
+    align-items: center;
+  }
   .typing-dots {
     display: flex;
     gap: 5px;
