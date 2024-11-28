@@ -13,9 +13,6 @@ login(token=hf_token)
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
-
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # MODEL
@@ -29,6 +26,10 @@ tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+# foldery css/html
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 
 # POST
