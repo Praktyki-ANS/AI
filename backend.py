@@ -1,6 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from typing import List
 from pydantic import BaseModel
 from contextlib import asynccontextmanager
+from transformers import pipeline
 from transformers import pipeline
 
 
@@ -52,7 +54,8 @@ pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-pl-en")
 
 @asynccontextmanager
 async def lifespan(app):
-    print("Loading model")
+    print("Loading models from Hugging Face")
+    models["emotion_classifier"] = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
     yield
     print("Unloading model")
     pipe.model.cpu()  # Zwolnienie zasobów GPU, jeśli używane
@@ -60,6 +63,12 @@ async def lifespan(app):
     pipe.model = None
 
 app = FastAPI(lifespan=lifespan)
+
+class InputData(BaseModel):
+    texts: List[str]
+
+class OutputData(BaseModel):
+    emotions: List[dict]
 
 # Model danych wejściowych
 class RequestModel(BaseModel):
@@ -77,3 +86,14 @@ def translate_text(request: RequestModel):
 @app.get("/healthcheck")
 def healthcheck():
     return {"status": "ok"}
+
+
+@app.post("/predict", response_model=OutputData)
+def predict(input_data: InputData) -> OutputData:
+    if "emotion_classifier" not in models:
+        raise HTTPException(status_code=503, detail="Emotion classifier model not available")
+
+    model = models["emotion_classifier"]
+    predictions = model(input_data.texts)
+
+    return OutputData(emotions=predictions)
