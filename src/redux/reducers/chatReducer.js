@@ -6,6 +6,11 @@ const initialState = {
 
 const chatReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'ADD_MESSAGE':
+            return {
+                ...state,
+                messages: [...state.messages, action.payload],
+            };
         case "FETCH_MESSAGE_START":
             return { ...state, loading: true, error: null };
         case "FETCH_MESSAGE_SUCCESS":

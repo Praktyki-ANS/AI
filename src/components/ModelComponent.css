@@ -55,6 +55,20 @@
     min-height: 10%;
     align-items: center;
   }
+  .error-message-v {
+    align-self: center;
+    background-color: rgba(0,0,0,0.5);
+    border: solid red 1px;
+    box-shadow: red 10 12 14;
+    color: red;
+    height: auto;
+    min-width: 80%;
+    text-align: center;
+    min-height: 10%;
+    align-items: center;
+    padding: 0px;
+    margin: -20px;
+  }
   .typing-dots {
     display: flex;
     gap: 5px;
@@ -155,19 +169,24 @@
   
   .send-button .svg-wrapper svg.square {
     transform: rotate(0deg) scale(1);
+    transition: transform 0.5s ease; /* Dodaj czas trwania animacji */
   }
   
   .send-button .svg-wrapper svg.arrow {
     transform: rotate(0deg) scale(1);
+    transition: transform 0.5s ease; /* Dodaj czas trwania animacji */
   }
   
   .send-button svg.animate-square {
     transform: rotate(90deg) scale(1);
+    transition: transform 0.5s ease; /* Dodaj czas trwania animacji */
   }
   
   .send-button svg.animate-arrow {
     transform: rotate(0deg) scale(1);
+    transition: transform 0.5s ease; /* Dodaj czas trwania animacji */
   }
+
 .bg-light-glass{
   background-color: rgba( 0, 0, 0, 0.01 );
   backdrop-filter: blur( 2px );

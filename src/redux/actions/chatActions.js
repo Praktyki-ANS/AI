@@ -1,4 +1,10 @@
-import axios from "axios";
+import axiosInstance from '../../utils/axiosInstance'; // Importuj instancję Axios
+
+// actions/chatActions.js
+export const addMessage = (message) => ({
+    type: 'ADD_MESSAGE',
+    payload: message,
+});
 
 export const fetchModelResponse = (input, modelId) => async (dispatch) => {
     dispatch({ type: "FETCH_MESSAGE_START" });
@@ -31,15 +37,16 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
     console.log("Endpoint:", endpoint);
 
     // Handling specific logic based on modelId
-    if (modelId == 2) {  // Emotion classifier model (modelId = 2)
+    if (modelId === 2) {  // Emotion classifier model (modelId = 2)
         requestBody = { texts: [input] };
-    } else if (modelId == 3) {  // Question answering model (modelId = 3)
+    } else if (modelId === 3) {  // Question answering model (modelId = 3)
         const [context, question] = input.split("|"); // Split input for question-answering
         requestBody = { context, question };
     }
 
     try {
-        const response = await axios.post(`http://127.0.0.1:8000${endpoint}`, requestBody);
+        // Użyj instancji Axios do wykonania zapytania
+        const response = await axiosInstance.post(endpoint, requestBody);
         let message = "";
 
         // Process the response based on modelId
@@ -63,15 +70,10 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
                 message = "No valid model response.";
         }
 
-        // Dispatch the success actions for both user message and model response
+        // Dispatch the success action for the model response only
         dispatch({
             type: "FETCH_MESSAGE_SUCCESS",
-            payload: { text: input, isUser: true }, // User message
-        });
-
-        dispatch({
-            type: "FETCH_MESSAGE_SUCCESS",
-            payload: { text: message, isUser: false }, // Model response
+            payload: { text: message, isUser:  false }, // Model response
         });
 
     } catch (error) {
