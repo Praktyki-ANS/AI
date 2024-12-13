@@ -7,16 +7,22 @@ router = APIRouter()
 class RequestModel(BaseModel):
     input: str
 
-@router.post("/translate")
-def translate_text(request: RequestModel):
+@app.post("/translate/pl-en")
+def translate_text_pl_en(request: RequestModel):
     input_text = request.input
-
     try:
-        model = models.get("translation")
-        if not model:
-            raise HTTPException(status_code=503, detail="Translation model not available")
-
-        translation = model(input_text, max_length=40, return_tensors=False)
-        return {"input": input_text, "translation": translation[0]["translation_text"]}
+        translation = models["pl-en"](input_text, max_length=40, return_tensors=False)
+        translated_text = translation[0]["translation_text"]
+        return {"input": input_text, "translation": translated_text}
     except Exception as e:
-        return {"error": str(e)}
+        raise HTTPException(status_code=500, detail=f"Translation failed: {str(e)}")
+
+@app.post("/translate/en-pl")
+def translate_text_en_pl(request: RequestModel):
+    input_text = request.input
+    try:
+        translation = models["en-pl"](input_text, max_length=40, return_tensors=False)
+        translated_text = translation[0]["translation_text"]
+        return {"input": input_text, "translation": translated_text}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Translation failed: {str(e)}")

@@ -8,7 +8,8 @@ models = {}
 def load_models():
     print("Loading models from Hugging Face")
     models["summarization"] = pipeline("summarization", model="facebook/bart-large-cnn", clean_up_tokenization_spaces=True)
-    models["translation"] = pipeline("translation", model="Helsinki-NLP/opus-mt-pl-en", clean_up_tokenization_spaces=True)
+    models["pl-en"] = pipeline("translation", model="Helsinki-NLP/opus-mt-pl-en", clean_up_tokenization_spaces=True)
+    models["en-pl"] = pipeline("translation", model="sdadas/mt5-base-translator-en-pl")
     models["emotion_classifier"] = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
     models["question_answering"] = pipeline("question-answering", model="deepset/roberta-base-squad2")
     models["text_generation"] = pipeline("text-generation", model="gpt2")
