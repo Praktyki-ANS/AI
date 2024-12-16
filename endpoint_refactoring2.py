@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
-from rafactoring_gemini import generate_text2  
+from refactoring_gemini import generate_text2  
 
 
 
