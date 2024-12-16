@@ -7,6 +7,7 @@ import chat3 from "./chat3.png"
 import chat4 from "./chat4.jpg"
 import chat5 from "./chat5.jpg"
 import next from "./next.png"
+import chat6 from "./chat6.png"
 
 export {
   logo,
@@ -17,5 +18,6 @@ export {
   chat3,
   chat4,
   chat5,
-  next
+  next,
+  chat6
 };

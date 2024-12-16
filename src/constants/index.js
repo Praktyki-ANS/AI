@@ -1,4 +1,4 @@
- import { chat1, chat2, chat3, chat4, chat5, } from "../assets"
+ import { chat1, chat2, chat3, chat4, chat5, chat6 } from "../assets"
  
  const apiIn = process.env.GPT_API_IN;
 const apiOut = process.env.GPT_API_OUT;
@@ -66,11 +66,21 @@ const apiOut = process.env.GPT_API_OUT;
     },
     {
       id: "5",
-      type: "imgGen",
+      type: "chat",
       link: "/model/5",
-      imageUrl: chat3,
-      title: "Img generator ",
-      description : "img generator ",
+      quickTip: "Witaj, jestem Pegasus. Pomogę ci sumaryzować tekst.",
+      imageUrl: chat6,
+      title: "Pegasus",
+      description: "Pegasus to zaawansowany model do podsumowywania tekstu, który wykorzystuje techniki przetwarzania języka naturalnego, aby szybko i skutecznie skracać długie dokumenty do najważniejszych informacji. Idealny do użytku akademickiego i biznesowego."
+    },
+    {
+      id: "6",
+      type: "chat",
+      link: "/model/6",
+      imageUrl: chat6,
+      quickTip: "Hej, jestem sdadas, przetłumaczę to, co napiszesz, z polskiego na angielski.",
+      title: "sdadas",
+      description: "Model sdadas to narzędzie do tłumaczenia, które umożliwia szybkie i dokładne przekłady tekstów z języka polskiego na angielski. Dzięki zaawansowanym algorytmom tłumaczenia, zapewnia naturalne i płynne rezultaty, idealne dla osób potrzebujących wsparcia w komunikacji międzykulturowej."
     }
   ];
   

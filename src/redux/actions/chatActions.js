@@ -18,7 +18,7 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
             endpoint = "/summarization";
             break;
         case 1:
-            endpoint = "/translate";
+            endpoint = "/translate/pl-en";
             break;
         case 2:
             endpoint = "/predict";
@@ -28,6 +28,12 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
             break;
         case 4:
             endpoint = "/generate-text";
+            break;
+        case 5: 
+            endpoint = "/summarization/pegasus";
+            break;
+        case 6: 
+            endpoint = "/translate/en-pl";
             break;
         default:
             endpoint = "/healthcheck";
@@ -65,6 +71,12 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
                 break;
             case 4:  // Text generation
                 message = response.data.generated_text || "No text generated.";
+                break;
+            case 5:  // Summarization/pegasus
+                message = response.data.summarization || "No summary generated.";
+                break;
+            case 6:  // Summarization
+                message = response.data.translation || "No translation available.";
                 break;
             default:
                 message = "No valid model response.";
