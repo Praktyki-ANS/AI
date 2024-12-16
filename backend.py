@@ -10,7 +10,7 @@ async def lifespan(app):
     yield
     unload_models()
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, debug=True)
 
 origins = [
     "http://localhost:5173",  # Frontend address
@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-from routes import summarization, translate, predict, question_answering, generate_text, healthcheck
+from routes import summarization, translate, predict, question_answering, generate_text, healthcheck, images
 
 app.include_router(summarization.router)
 app.include_router(translate.router)
@@ -34,3 +34,4 @@ app.include_router(predict.router)
 app.include_router(question_answering.router)
 app.include_router(generate_text.router)
 app.include_router(healthcheck.router)
+app.include_router(images.router)

@@ -1,5 +1,6 @@
 from transformers import pipeline
 import os
+from diffusers import StableDiffusionPipeline
 
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
@@ -12,6 +13,7 @@ def load_models():
     models["emotion_classifier"] = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
     models["question_answering"] = pipeline("question-answering", model="deepset/roberta-base-squad2")
     models["text_generation"] = pipeline("text-generation", model="gpt2")
+    models["stable_diffusion"] = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
 
 def unload_models():
     print("Unloading models")
