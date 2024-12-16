@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 
-def generate_text(input_text: str, models: dict, api_key: str) -> dict:
+def generate_text2(input_text: str, models: dict, api_key: str) -> dict:
     try:
         model = models.get("text_generation")
         if not model:
