@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchModelResponse, addMessage } from "../redux/actions/chatActions"; // Importuj addMessage
+import { fetchModelResponse, addMessage, clearImageMessages } from "../redux/actions/chatActions"; // Importuj addMessage
 import "./ModelComponent.css"; // Używamy zaktualizowanych styli CSS
 import { motion } from "framer-motion";
 
@@ -23,6 +23,7 @@ const ModelChatComponent = ({ ModelId }) => {
             // Dodaj wiadomość użytkownika do stanu
             const userMessage = { text: input, isUser:  true };
             dispatch(addMessage(userMessage)); // Dodaj wiadomość do Redux
+            dispatch(clearImageMessages());
             setIsButtonDisabled(true); // Disable button while waiting for response
             dispatch(fetchModelResponse(input, ModelId)); // Fetch response from the model
             setInput(""); // Clear input after dispatching
@@ -61,8 +62,14 @@ const ModelChatComponent = ({ ModelId }) => {
                             delay: index % 2 === 0 ? 0 : 1,
                             duration: 0.5,
                         }}
-                    >
-                        {msg.text}
+                    >       
+                    {msg.text.startsWith("<img") ? (
+                            // If the message is an image tag, render it as an image
+                            <div dangerouslySetInnerHTML={{ __html: msg.text }} />
+                        ) : (
+                            // Otherwise, render the text
+                            msg.text
+                        )}
                     </motion.div>
                 ))}
                 {loading && (

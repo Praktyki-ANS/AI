@@ -14,7 +14,7 @@ app = FastAPI(lifespan=lifespan)
 
 origins = [
     "http://localhost:5173",  # Frontend address
-    "http://127.0.0.1:5173", # In case you're testing from 127.0.0.1 instead of localhost
+    "http://127.0.0.1:5173",  # In case you're testing from 127.0.0.1 instead of localhost
 ]
 
 # Add CORS middleware to allow frontend to make requests to backend
@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-from routes import summarization, translate, predict, question_answering, generate_text, healthcheck
+from routes import summarization, translate, predict, question_answering, generate_text, healthcheck, images
 
 app.include_router(summarization.router)
 app.include_router(translate.router)
@@ -34,3 +34,4 @@ app.include_router(predict.router)
 app.include_router(question_answering.router)
 app.include_router(generate_text.router)
 app.include_router(healthcheck.router)
+app.include_router(images.router)

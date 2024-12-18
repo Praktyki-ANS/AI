@@ -58,13 +58,13 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className='list-none hidden lg:flex flex-row gap-10'>
+        <ul className='list-none hidden xl:flex flex-row gap-10'>
           {/* Render links dynamically based on the current route */}
           {renderLinks()}
         </ul>
 
         {/* Mobile menu */}
-        <div className='lg:hidden flex flex-1 justify-end items-center'>
+        <div className='xl:hidden flex flex-1 justify-end items-center'>
           <input id="checkbox2" type="checkbox" checked={toggle} />
           <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
             onClick={() => setToggle(!toggle)}>

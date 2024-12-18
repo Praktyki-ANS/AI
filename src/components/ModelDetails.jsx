@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux'; // Import dispatch
 import { Models } from '../constants';
 import ModelChatComponent from './ModelChatComponent'; // Import ChatComponent
-import ModelImgComponent from './ModelImgComponent';
 import { styles } from '../styles';
 
 const ModelDetails = () => {
@@ -41,10 +40,7 @@ const ModelDetails = () => {
 
       <div className='flex flex-col h-full'>
         <div className='flex-1'>
-          {/* Conditional rendering based on model.type */}
-          {model?.type === 'chat' ? (
             <ModelChatComponent key={id} ModelId={model?.id} />
-          ) : <ModelImgComponent key={id} ModelId={model?.id} />}
         </div>
       </div>
     </section>

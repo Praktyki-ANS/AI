@@ -81,7 +81,16 @@ const apiOut = process.env.GPT_API_OUT;
       quickTip: "Hej, jestem sdadas, przetłumaczę to, co napiszesz, z polskiego na angielski.",
       title: "sdadas",
       description: "Model sdadas to narzędzie do tłumaczenia, które umożliwia szybkie i dokładne przekłady tekstów z języka polskiego na angielski. Dzięki zaawansowanym algorytmom tłumaczenia, zapewnia naturalne i płynne rezultaty, idealne dla osób potrzebujących wsparcia w komunikacji międzykulturowej."
-    }
+    },
+    {
+      id: "7",
+      type: "chat",
+      link: "/model/7",
+      imageUrl: chat6,
+      quickTip: "Hej, jestem stable defusion, wygeneruję dla ciebie obraz.",
+      title: "stable defusion",
+      description: ""
+    },
   ];
   
 

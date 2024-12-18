@@ -24,6 +24,11 @@ const chatReducer = (state = initialState, action) => {
             return { ...state, loading: false, error: action.payload };
         case "CLEAR_MESSAGES":
             return { ...state, messages: [] }; // Resetowanie wiadomości
+        case "CLEAR_IMAGE_MESSAGES":
+            return {
+                ...state,
+                messages: state.messages.filter(msg => !msg.text.startsWith("<img")),
+            };
         default:
             return state;
     }

@@ -1,4 +1,5 @@
 from transformers import pipeline
+from diffusers import StableDiffusionPipeline
 import os
 
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
@@ -14,8 +15,10 @@ def load_models():
     models["emotion_classifier"] = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
     models["question_answering"] = pipeline("question-answering", model="deepset/roberta-base-squad2")
     models["text_generation"] = pipeline("text-generation", model="gpt2")
-
-
+    
+    # Load Stable Diffusion model
+    models["stable_diffusion"] = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
+    models["stable_diffusion"].to("cpu")  # Move the model to CPU
 
 def unload_models():
     print("Unloading models")
@@ -23,3 +26,10 @@ def unload_models():
         if hasattr(models[key], "model"):
             models[key].model.cpu()
         models[key] = None
+
+# Example usage
+if __name__ == "__main__":
+    load_models()
+    # You can now use the models, for example:
+    # image = models["stable_diffusion"]("A fantasy landscape")
+    unload_models()
