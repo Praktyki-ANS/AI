@@ -14,7 +14,7 @@ app = FastAPI(lifespan=lifespan, debug=True)
 
 origins = [
     "http://localhost:5173",  # Frontend address
-    "http://127.0.0.1:5173", # In case you're testing from 127.0.0.1 instead of localhost
+    "http://127.0.0.1:5173",  # In case you're testing from 127.0.0.1 instead of localhost
 ]
 
 # Add CORS middleware to allow frontend to make requests to backend
