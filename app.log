@@ -1,0 +1,61 @@
+2025-01-07 08:16:16,820 - INFO - Request: OPTIONS http://localhost:8000/predict/emotions
+2025-01-07 08:16:16,827 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:16:16,828 - INFO - Client: Address(host='127.0.0.1', port=64850)
+2025-01-07 08:16:16,854 - INFO - Request to http://localhost:8000/predict/emotions took 0.01 seconds.
+2025-01-07 08:16:16,854 - INFO - Response status: 200
+2025-01-07 08:16:16,860 - INFO - Request: POST http://localhost:8000/predict/emotions
+2025-01-07 08:16:16,861 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '17', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:16:16,861 - INFO - Client: Address(host='127.0.0.1', port=64850)
+2025-01-07 08:16:18,340 - ERROR - HTTP Exception: Prediction failed: 1 validation error for OutputData
+emotions
+  Field required [type=missing, input_value={'predictions': [{'label'...e': 0.919236421585083}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-07 08:16:18,341 - INFO - Request to http://localhost:8000/predict/emotions took 1.48 seconds.
+2025-01-07 08:16:18,342 - INFO - Response status: 500
+2025-01-07 08:29:11,344 - INFO - Request: OPTIONS http://localhost:8000/predict/emotions
+2025-01-07 08:29:11,346 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:29:11,346 - INFO - Client: Address(host='127.0.0.1', port=57338)
+2025-01-07 08:29:11,347 - INFO - Request to http://localhost:8000/predict/emotions took 0.00 seconds.
+2025-01-07 08:29:11,347 - INFO - Response status: 200
+2025-01-07 08:29:11,350 - INFO - Request: POST http://localhost:8000/predict/emotions
+2025-01-07 08:29:11,351 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '17', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:29:11,351 - INFO - Client: Address(host='127.0.0.1', port=57338)
+2025-01-07 08:29:11,419 - ERROR - HTTP Exception: Prediction failed: 1 validation error for OutputData
+emotions
+  Field required [type=missing, input_value={'predictions': [{'label'...e': 0.919236421585083}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-07 08:29:11,419 - INFO - Request to http://localhost:8000/predict/emotions took 0.07 seconds.
+2025-01-07 08:29:11,419 - INFO - Response status: 500
+2025-01-07 08:29:27,086 - INFO - Request: OPTIONS http://localhost:8000/predict/topic
+2025-01-07 08:29:27,086 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:29:27,087 - INFO - Client: Address(host='127.0.0.1', port=57343)
+2025-01-07 08:29:27,087 - INFO - Request to http://localhost:8000/predict/topic took 0.00 seconds.
+2025-01-07 08:29:27,087 - INFO - Response status: 200
+2025-01-07 08:29:27,090 - INFO - Request: POST http://localhost:8000/predict/topic
+2025-01-07 08:29:27,090 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '19', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:29:27,091 - INFO - Client: Address(host='127.0.0.1', port=57345)
+2025-01-07 08:29:33,500 - ERROR - HTTP Exception: Prediction failed: 1 validation error for OutputData
+emotions
+  Field required [type=missing, input_value={'predictions': [{'label'...': 0.4456190764904022}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-07 08:29:33,501 - INFO - Request to http://localhost:8000/predict/topic took 6.41 seconds.
+2025-01-07 08:29:33,501 - INFO - Response status: 500
+2025-01-07 08:30:00,532 - INFO - Request: OPTIONS http://localhost:8000/translate/pl-en
+2025-01-07 08:30:00,532 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:30:00,533 - INFO - Client: Address(host='127.0.0.1', port=57912)
+2025-01-07 08:30:00,534 - INFO - Request to http://localhost:8000/translate/pl-en took 0.00 seconds.
+2025-01-07 08:30:00,535 - INFO - Response status: 200
+2025-01-07 08:30:00,540 - INFO - Request: POST http://localhost:8000/translate/pl-en
+2025-01-07 08:30:00,541 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '25', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:30:00,541 - INFO - Client: Address(host='127.0.0.1', port=57912)
+2025-01-07 08:30:01,847 - INFO - Request to http://localhost:8000/translate/pl-en took 1.30 seconds.
+2025-01-07 08:30:01,848 - INFO - Response status: 200
+2025-01-07 08:30:11,613 - INFO - Request: POST http://localhost:8000/predict/emotions
+2025-01-07 08:30:11,614 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '17', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-07 08:30:11,614 - INFO - Client: Address(host='127.0.0.1', port=57917)
+2025-01-07 08:30:11,662 - ERROR - HTTP Exception: Prediction failed: 1 validation error for OutputData
+emotions
+  Field required [type=missing, input_value={'predictions': [{'label'...e': 0.919236421585083}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-07 08:30:11,663 - INFO - Request to http://localhost:8000/predict/emotions took 0.05 seconds.
+2025-01-07 08:30:11,663 - INFO - Response status: 500
