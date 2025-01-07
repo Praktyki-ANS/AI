@@ -1,7 +1,5 @@
- import { chat1, chat2, chat3, chat4, chat5, chat6 } from "../assets"
+ import { chat1, chat2, chat3, chat4, chat5, chat6, chat7 } from "../assets"
  
- const apiIn = process.env.GPT_API_IN;
-const apiOut = process.env.GPT_API_OUT;
  export const navLinks = [
     {
       id: "about",
@@ -86,10 +84,10 @@ const apiOut = process.env.GPT_API_OUT;
       id: "7",
       type: "chat",
       link: "/model/7",
-      imageUrl: chat6,
-      quickTip: "Hej, jestem stable defusion, wygeneruję dla ciebie obraz.",
-      title: "stable defusion",
-      description: ""
+      imageUrl: chat7,
+      quickTip: "Hej, jestem stable diffusion, wygeneruję dla ciebie obraz.",
+      title: "stable diffusion",
+      description: "Stable Diffusion to model generowania obrazów, który wykorzystuje sztuczną inteligencję do tworzenia realistycznych wizualizacji na podstawie wskazówek użytkownika. Jest idealnym narzędziem dla artystów i projektantów pragnących przekształcić swoje pomysły w unikalne obrazy."
     },
   ];
   
