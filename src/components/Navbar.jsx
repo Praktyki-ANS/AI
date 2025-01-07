@@ -58,28 +58,58 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className={`list-none ${isModelDetailPage ? 'hidden' : 'xl:flex'} flex-row gap-10`}>
-          {/* Render links dynamically based on the current route */}
-          {renderLinks()}
-        </ul>
 
-        {/* Mobile menu */}
-        <div className={`xl:flex ${isModelDetailPage ? 'hidden' : 'flex'} flex-1 justify-end items-center`}>
-          <input id="checkbox2" type="checkbox" checked={toggle} />
-          <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
-            onClick={() => setToggle(!toggle)}>
-            <div id="bar4" className="bars"></div>
-            <div id="bar5" className="bars"></div>
-            <div id="bar6" className="bars"></div>
-          </label>
+       
+        {isModelDetailPage && (
+          <>
+        <ul className='list-none hidden flex-row gap-10'>
+        {/* Render links dynamically based on the current route */}
+        {renderLinks()}
+      </ul>
+        <div className='flex flex-1 justify-end items-center'>
+        <input id="checkbox2" type="checkbox" checked={toggle} />
+        <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
+          onClick={() => setToggle(!toggle)}>
+          <div id="bar4" className="bars"></div>
+          <div id="bar5" className="bars"></div>
+          <div id="bar6" className="bars"></div>
+        </label>
 
-          {/* Mobile menu content */}
-          <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
-            <ul className='list-none flex justify-end items-start flex-col gap-4'>
-              {renderLinks()}
-            </ul>
-          </div>
+        {/* Mobile menu content */}
+        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+          <ul className='list-none flex justify-end items-start flex-col gap-4'>
+            {renderLinks()}
+          </ul>
         </div>
+      </div>
+      </>
+        )}
+
+      {!isModelDetailPage && (
+        <>
+               <ul className='list-none hidden xl:flex flex-row gap-10'>
+        {/* Render links dynamically based on the current route */}
+        {renderLinks()}
+      </ul>
+        <div className='xl:hidden flex flex-1 justify-end items-center'>
+        <input id="checkbox2" type="checkbox" checked={toggle} />
+        <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
+          onClick={() => setToggle(!toggle)}>
+          <div id="bar4" className="bars"></div>
+          <div id="bar5" className="bars"></div>
+          <div id="bar6" className="bars"></div>
+        </label>
+
+        {/* Mobile menu content */}
+        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+          <ul className='list-none flex justify-end items-start flex-col gap-4'>
+            {renderLinks()}
+          </ul>
+        </div>
+      </div>
+      </>
+        )}
+
       </div>
     </nav>
   );

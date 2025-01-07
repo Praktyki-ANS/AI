@@ -55,7 +55,7 @@ const ModelsSection = () => {
 
     </motion.p>
 
-    <div className=' mt-20 flex flex-wrap gap-20 justify-center items-center'>
+    <div className=' mt-20 flex flex-wrap gap-20 justify-center items-center h-screen overflow-auto'>
       {Models.map((chat, index) => (<ModelCard key={Models.title} index={index} {...chat} />))}
     </div>
    </>

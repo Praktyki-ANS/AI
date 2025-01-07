@@ -35,7 +35,7 @@ def generate_image(input_data: ImageInputData) -> ImageOutputData:
         
         # Generowanie obrazu
         with torch.no_grad():  # Oszczędzaj pamięć GPU
-            results = model(input_data.prompt, num_inference_steps=100)  # Możesz dostosować parametry
+            results = model(input_data.prompt, num_inference_steps=8)  # Możesz dostosować parametry
 
         # Przekształcanie obrazów do formatu, który można zwrócić
         images = []

@@ -13,9 +13,9 @@ const ModelChatComponent = ({ ModelId }) => {
     const chatEndRef = useRef(null);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false); // Track button disabled state
 
-    // Scroll to the bottom when new messages are added
+
     useEffect(() => {
-        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, [messages]);
 
     const handleSendMessage = () => {

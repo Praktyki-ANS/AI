@@ -98,7 +98,7 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
                 message = response.data.translation || "No translation available.";
                 break;
             case 2:  // Emotion classifier
-                message = response.data.emotions?.map(e => `${e.label}: ${e.score}`).join(", ") || "No emotions detected.";
+                message = response.data.predictions?.map(e => `${e.label}: ${e.score}`).join(", ") || "No emotions detected.";
                 break;
             case 3:  // Question answering
                 message = response.data.answer || "No answer available.";
