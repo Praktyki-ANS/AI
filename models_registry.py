@@ -15,7 +15,13 @@ def load_models():
     models["emotion_classifier"] = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
     models["question_answering"] = pipeline("question-answering", model="deepset/roberta-base-squad2")
     models["text_generation"] = pipeline("text-generation", model="gpt2")
-    
+    models["toxicity_classifier"] = pipeline("text-classification", model="unitary/toxic-bert")
+    models["paraphrasing_model"] = pipeline("text2text-generation", model="Vamsi/T5_Paraphrase_Paws")
+    models["sentiment_analysis"] = pipeline("text-classification", model="nlptown/bert-base-multilingual-uncased-sentiment")
+    models["topic_classifier"] = pipeline("text-classification", model="facebook/bart-large-mnli")
+    models["zero_shot_classifier"] = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+    models["ner_model"] = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-english")
+
     # Load Stable Diffusion model
     models["stable_diffusion"] = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
     models["stable_diffusion"].to("cpu")  # Move the model to CPU
