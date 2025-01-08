@@ -1,4 +1,3 @@
-//redux/store.js
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers'; // Adjust the path as necessary
 
