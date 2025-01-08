@@ -1,4 +1,4 @@
-// reducers/index.js
+// redux/reducers/index.js
 import { combineReducers } from 'redux';
 import chatReducer from './chatReducer';
 
