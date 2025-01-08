@@ -32,7 +32,7 @@
       link: "/model/1",
       quickTip: "Cześć jestem Helsinki. Napisz coś po polsku a przetłumaczę to na angielski.",
       imageUrl: chat2,
-      title: "Helsinki ",
+      title: "Helsinki pl-eng",
       description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
     },
     {
@@ -143,6 +143,23 @@
       title: "NER Model",
       description: "Model rozpoznawania nazwanych jednostek (NER), który identyfikuje i klasyfikuje istotne jednostki w tekstach, takie jak osoby, organizacje czy lokalizacje. Używa zaawansowanych algorytmów do analizy tekstu i wydobywania kluczowych informacji."
   },
+  {
+    id: "14",
+    type: "chat",
+    link: "/model/14",
+    quickTip: "Cześć jestem Helsinki. Napisz coś po angielsku a przetłumaczę to na niemiecki.",
+    imageUrl: chat2,
+    title: "Helsinki eng-ger",
+    description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
+  },{
+  id: "15",
+  type: "chat",
+  link: "/model/15",
+  quickTip: "Cześć jestem Helsinki. Napisz coś po angielsku a przetłumaczę to na hiszpański.",
+  imageUrl: chat2,
+  title: "Helsinki eng-esp",
+  description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
+},
   ];
   
 

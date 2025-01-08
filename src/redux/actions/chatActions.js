@@ -63,6 +63,12 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
         case 13: // New endpoint for named entity recognition
             endpoint = "/predict/ner";
             break;
+        case 14: // New endpoint for named entity recognition
+            endpoint = "/translate/en-ger";
+            break;   
+        case 15: // New endpoint for named entity recognition
+            endpoint = "/translate/en-esp";
+            break;  
         default:
             endpoint = "/healthcheck";
     }
@@ -133,6 +139,14 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
             case 13: // Named entity recognition
                 message = response.data.predictions?.map(e => `Entity: ${e.entity}, Label: ${e.label}`).join(", ") || "No entities recognized.";
                 break;
+                case 14:  // Translation
+                message = response.data.translation || "No translation available.";
+                break;
+                case 15:  // Translation
+                message = response.data.translation || "No translation available.";
+                break;
+                
+                
             default:
                 message = "No valid model response.";
         }

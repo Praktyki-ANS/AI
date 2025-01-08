@@ -179,3 +179,93 @@ emotions
 2025-01-07 08:51:47,237 - INFO - Response status: 200
 2025-01-07 08:56:45,075 - INFO - Request to http://localhost:8000/images took 864.95 seconds.
 2025-01-07 08:56:45,076 - INFO - Response status: 200
+2025-01-08 11:55:06,889 - INFO - Request: OPTIONS http://localhost:8000/translate/pl-en
+2025-01-08 11:55:06,894 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:55:06,894 - INFO - Client: Address(host='127.0.0.1', port=54577)
+2025-01-08 11:55:06,903 - INFO - Request to http://localhost:8000/translate/pl-en took 0.00 seconds.
+2025-01-08 11:55:06,903 - INFO - Response status: 200
+2025-01-08 11:55:06,917 - INFO - Request: POST http://localhost:8000/translate/pl-en
+2025-01-08 11:55:06,917 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '25', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:55:06,918 - INFO - Client: Address(host='127.0.0.1', port=54577)
+2025-01-08 11:55:08,315 - INFO - Request to http://localhost:8000/translate/pl-en took 1.40 seconds.
+2025-01-08 11:55:08,315 - INFO - Response status: 200
+2025-01-08 11:55:56,483 - INFO - Request: GET http://127.0.0.1:8000/
+2025-01-08 11:55:56,483 - INFO - Headers: Headers({'host': '127.0.0.1:8000', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'accept-language': 'pl,en-US;q=0.7,en;q=0.3', 'accept-encoding': 'gzip, deflate, br, zstd', 'connection': 'keep-alive', 'upgrade-insecure-requests': '1', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'none', 'sec-fetch-user': '?1', 'priority': 'u=0, i'})
+2025-01-08 11:55:56,483 - INFO - Client: Address(host='127.0.0.1', port=55153)
+2025-01-08 11:55:56,485 - ERROR - HTTP Exception: Not Found
+2025-01-08 11:55:56,487 - INFO - Request to http://127.0.0.1:8000/ took 0.00 seconds.
+2025-01-08 11:55:56,487 - INFO - Response status: 404
+2025-01-08 11:55:56,622 - INFO - Request: GET http://127.0.0.1:8000/favicon.ico
+2025-01-08 11:55:56,622 - INFO - Headers: Headers({'host': '127.0.0.1:8000', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0', 'accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'accept-language': 'pl,en-US;q=0.7,en;q=0.3', 'accept-encoding': 'gzip, deflate, br, zstd', 'connection': 'keep-alive', 'referer': 'http://127.0.0.1:8000/', 'sec-fetch-dest': 'image', 'sec-fetch-mode': 'no-cors', 'sec-fetch-site': 'cross-site', 'priority': 'u=6'})
+2025-01-08 11:55:56,622 - INFO - Client: Address(host='127.0.0.1', port=55153)
+2025-01-08 11:55:56,623 - ERROR - HTTP Exception: Not Found
+2025-01-08 11:55:56,624 - INFO - Request to http://127.0.0.1:8000/favicon.ico took 0.00 seconds.
+2025-01-08 11:55:56,625 - INFO - Response status: 404
+2025-01-08 11:56:01,692 - INFO - Request: GET http://127.0.0.1:8000/metrics
+2025-01-08 11:56:01,692 - INFO - Headers: Headers({'host': '127.0.0.1:8000', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'accept-language': 'pl,en-US;q=0.7,en;q=0.3', 'accept-encoding': 'gzip, deflate, br, zstd', 'connection': 'keep-alive', 'upgrade-insecure-requests': '1', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'none', 'sec-fetch-user': '?1', 'priority': 'u=0, i'})
+2025-01-08 11:56:01,693 - INFO - Client: Address(host='127.0.0.1', port=55241)
+2025-01-08 11:56:01,702 - INFO - Request to http://127.0.0.1:8000/metrics took 0.01 seconds.
+2025-01-08 11:56:01,702 - INFO - Response status: 200
+2025-01-08 11:56:01,729 - INFO - Request: GET http://127.0.0.1:8000/favicon.ico
+2025-01-08 11:56:01,729 - INFO - Headers: Headers({'host': '127.0.0.1:8000', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0', 'accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'accept-language': 'pl,en-US;q=0.7,en;q=0.3', 'accept-encoding': 'gzip, deflate, br, zstd', 'connection': 'keep-alive', 'referer': 'http://127.0.0.1:8000/metrics', 'sec-fetch-dest': 'image', 'sec-fetch-mode': 'no-cors', 'sec-fetch-site': 'same-origin', 'priority': 'u=6'})
+2025-01-08 11:56:01,729 - INFO - Client: Address(host='127.0.0.1', port=55241)
+2025-01-08 11:56:01,730 - ERROR - HTTP Exception: Not Found
+2025-01-08 11:56:01,730 - INFO - Request to http://127.0.0.1:8000/favicon.ico took 0.00 seconds.
+2025-01-08 11:56:01,731 - INFO - Response status: 404
+2025-01-08 11:58:07,154 - INFO - Request: OPTIONS http://localhost:8000/predict/emotions
+2025-01-08 11:58:07,154 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:58:07,155 - INFO - Client: Address(host='127.0.0.1', port=56668)
+2025-01-08 11:58:07,157 - INFO - Request to http://localhost:8000/predict/emotions took 0.00 seconds.
+2025-01-08 11:58:07,157 - INFO - Response status: 200
+2025-01-08 11:58:07,166 - INFO - Request: POST http://localhost:8000/predict/emotions
+2025-01-08 11:58:07,166 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '17', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:58:07,167 - INFO - Client: Address(host='127.0.0.1', port=56668)
+2025-01-08 11:58:08,387 - INFO - Request to http://localhost:8000/predict/emotions took 1.22 seconds.
+2025-01-08 11:58:08,388 - INFO - Response status: 200
+2025-01-08 11:58:33,345 - INFO - Request: POST http://localhost:8000/translate/pl-en
+2025-01-08 11:58:33,345 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '24', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:58:33,345 - INFO - Client: Address(host='127.0.0.1', port=56673)
+2025-01-08 11:58:33,830 - INFO - Request to http://localhost:8000/translate/pl-en took 0.48 seconds.
+2025-01-08 11:58:33,831 - INFO - Response status: 200
+2025-01-08 11:59:20,877 - INFO - Request: OPTIONS http://localhost:8000/translate/en-ger
+2025-01-08 11:59:20,877 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:59:20,878 - INFO - Client: Address(host='127.0.0.1', port=57539)
+2025-01-08 11:59:20,879 - INFO - Request to http://localhost:8000/translate/en-ger took 0.00 seconds.
+2025-01-08 11:59:20,880 - INFO - Response status: 200
+2025-01-08 11:59:20,884 - INFO - Request: POST http://localhost:8000/translate/en-ger
+2025-01-08 11:59:20,885 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '24', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:59:20,885 - INFO - Client: Address(host='127.0.0.1', port=57539)
+2025-01-08 11:59:21,683 - INFO - Request to http://localhost:8000/translate/en-ger took 0.80 seconds.
+2025-01-08 11:59:21,683 - INFO - Response status: 200
+2025-01-08 11:59:43,192 - INFO - Request: POST http://localhost:8000/translate/en-ger
+2025-01-08 11:59:43,192 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '25', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 11:59:43,192 - INFO - Client: Address(host='127.0.0.1', port=57546)
+2025-01-08 11:59:43,378 - INFO - Request to http://localhost:8000/translate/en-ger took 0.19 seconds.
+2025-01-08 11:59:43,378 - INFO - Response status: 200
+2025-01-08 12:00:02,880 - INFO - Request: OPTIONS http://localhost:8000/images
+2025-01-08 12:00:02,880 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 12:00:02,881 - INFO - Client: Address(host='127.0.0.1', port=57548)
+2025-01-08 12:00:02,881 - INFO - Request to http://localhost:8000/images took 0.00 seconds.
+2025-01-08 12:00:02,882 - INFO - Response status: 200
+2025-01-08 12:00:02,884 - INFO - Request: POST http://localhost:8000/images
+2025-01-08 12:00:02,884 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '18', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 12:00:02,884 - INFO - Client: Address(host='127.0.0.1', port=57548)
+2025-01-08 12:02:00,527 - INFO - Request to http://localhost:8000/images took 117.64 seconds.
+2025-01-08 12:02:00,527 - INFO - Response status: 200
+2025-01-08 12:02:52,801 - INFO - Request: OPTIONS http://localhost:8000/question-answering
+2025-01-08 12:02:52,802 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'accept': '*/*', 'access-control-request-method': 'POST', 'access-control-request-headers': 'content-type', 'origin': 'http://localhost:5173', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 12:02:52,802 - INFO - Client: Address(host='127.0.0.1', port=59939)
+2025-01-08 12:02:52,806 - INFO - Request to http://localhost:8000/question-answering took 0.00 seconds.
+2025-01-08 12:02:52,807 - INFO - Response status: 200
+2025-01-08 12:02:52,813 - INFO - Request: POST http://localhost:8000/question-answering
+2025-01-08 12:02:52,813 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '15', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 12:02:52,813 - INFO - Client: Address(host='127.0.0.1', port=59939)
+2025-01-08 12:02:52,831 - ERROR - Validation Error: [{'type': 'missing', 'loc': ('body', 'question'), 'msg': 'Field required', 'input': {'context': 'k'}}]
+2025-01-08 12:02:52,833 - INFO - Request to http://localhost:8000/question-answering took 0.02 seconds.
+2025-01-08 12:02:52,834 - INFO - Response status: 422
+2025-01-08 12:04:57,137 - INFO - Request: POST http://localhost:8000/question-answering
+2025-01-08 12:04:57,137 - INFO - Headers: Headers({'host': 'localhost:8000', 'connection': 'keep-alive', 'content-length': '18', 'sec-ch-ua-platform': '"Windows"', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'same-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7'})
+2025-01-08 12:04:57,138 - INFO - Client: Address(host='127.0.0.1', port=61370)
+2025-01-08 12:04:57,142 - ERROR - Validation Error: [{'type': 'missing', 'loc': ('body', 'question'), 'msg': 'Field required', 'input': {'context': 'dsad'}}]
+2025-01-08 12:04:57,142 - INFO - Request to http://localhost:8000/question-answering took 0.00 seconds.
+2025-01-08 12:04:57,143 - INFO - Response status: 422

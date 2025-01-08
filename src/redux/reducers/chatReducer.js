@@ -23,7 +23,7 @@ const chatReducer = (state = initialState, action) => {
         case "FETCH_MESSAGE_FAILURE":
             return { ...state, loading: false, error: action.payload };
         case "CLEAR_MESSAGES":
-            return { ...state, messages: [] }; // Resetowanie wiadomości
+            return { ...state, messages: [] , error: null}; // Resetowanie wiadomości
         case "CLEAR_IMAGE_MESSAGES":
             return {
                 ...state,

@@ -23,6 +23,8 @@ def load_models():
     models["topic_classifier"] = pipeline("text-classification", model="facebook/bart-large-mnli")
     models["zero_shot_classifier"] = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
     models["ner_model"] = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-english")
+    models["en-ger"] = pipeline("translation", model="Helsinki-NLP/opus-mt-en-de")
+    models["en-esp"] = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
 
     # Load Stable Diffusion model
     models["stable_diffusion"] = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
