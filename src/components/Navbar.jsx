@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation(); // Get the current path
 
   // Determine if the current path matches '/model/:id'
-  const isModelDetailPage = location.pathname.startsWith('/ANS-AI-DEMO/model');
+  const isModelDetailPage = location.pathname.startsWith('/model');
 
   // Function to dynamically render nav links based on current path
   const renderLinks = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
           } hover:text-white text-[18px] font-medium cursor-pointer`}
           onClick={() => setActive(model.title)}
         >
-          <Link to={`/ANS-AI-DEMO/model/${model.id}`}>{model.title}</Link>
+          <Link to={`/model/${model.id}`}>{model.title}</Link>
         </li>
       ));
     }
@@ -45,7 +45,7 @@ const Navbar = () => {
     <nav className={'${styles.paddingX} w-full flex items-center py-1 fixed top-0 z-20 bg-glass'}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
-          to='/ANS-AI-DEMO/'
+          to='/'
           className='flex items-center gap-2'
           onClick={() => {
             setActive('');
