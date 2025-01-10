@@ -269,3 +269,18 @@ emotions
 2025-01-08 12:04:57,142 - ERROR - Validation Error: [{'type': 'missing', 'loc': ('body', 'question'), 'msg': 'Field required', 'input': {'context': 'dsad'}}]
 2025-01-08 12:04:57,142 - INFO - Request to http://localhost:8000/question-answering took 0.00 seconds.
 2025-01-08 12:04:57,143 - INFO - Response status: 422
+2025-01-09 15:31:55,671 - INFO - Request: GET http://testserver/healthcheck
+2025-01-09 15:31:55,672 - INFO - Headers: Headers({'host': 'testserver', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'testclient'})
+2025-01-09 15:31:55,672 - INFO - Client: Address(host='testclient', port=50000)
+2025-01-09 15:31:55,674 - INFO - Request to http://testserver/healthcheck took 0.00 seconds.
+2025-01-09 15:31:55,674 - INFO - Response status: 200
+2025-01-10 11:32:37,214 - INFO - Request: GET http://testserver/healthcheck
+2025-01-10 11:32:37,215 - INFO - Headers: Headers({'host': 'testserver', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'testclient'})
+2025-01-10 11:32:37,215 - INFO - Client: Address(host='testclient', port=50000)
+2025-01-10 11:32:37,219 - INFO - Request to http://testserver/healthcheck took 0.00 seconds.
+2025-01-10 11:32:37,220 - INFO - Response status: 200
+2025-01-10 11:43:34,671 - INFO - Request: GET http://testserver/healthcheck
+2025-01-10 11:43:34,671 - INFO - Headers: Headers({'host': 'testserver', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'testclient'})
+2025-01-10 11:43:34,671 - INFO - Client: Address(host='testclient', port=50000)
+2025-01-10 11:43:34,675 - INFO - Request to http://testserver/healthcheck took 0.00 seconds.
+2025-01-10 11:43:34,676 - INFO - Response status: 200
