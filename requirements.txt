@@ -7,4 +7,4 @@ torch==2.4.1
 transformers==4.44.2
 pytest
 pytest-cov 
-httpx==0.20.0
+httpx==0.24.1
