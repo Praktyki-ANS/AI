@@ -9,7 +9,7 @@ class InputData(BaseModel):
     texts: List[str]
 
 class OutputData(BaseModel):
-    emotions: List[dict]
+    predictions: List[dict]
 
 @router.post("/predict/emotions", response_model=OutputData)
 def predict_emotions(input_data: InputData) -> OutputData:
