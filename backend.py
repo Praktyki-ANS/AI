@@ -1,45 +1,73 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+import time
+from fastapi import FastAPI, Request
 from contextlib import asynccontextmanager
-from transformers import pipeline
+from models_registry import load_models, unload_models
+from fastapi.middleware.cors import CORSMiddleware
+from log_config import logger
+from starlette.responses import Response
+from prometheus_client import Counter, Histogram, generate_latest
 
-
-pipe = pipeline("summarization", model="facebook/bart-large-cnn")
+# Prometheus metrics
+REQUEST_COUNT = Counter("app_request_count", "Total number of requests", ["method", "endpoint", "http_status"])
+REQUEST_LATENCY = Histogram("app_request_latency_seconds", "Request latency", ["endpoint"])
 
 @asynccontextmanager
 async def lifespan(app):
-    print("Loading model")
+    load_models()
     yield
-    print("Unloading model")
-    pipe.model.cpu()  
-    pipe.tokenizer = None
-    pipe.model = None
+    unload_models()
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, debug=True)
 
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
-class RequestModel(BaseModel):
-    input: str
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+# Prometheus Middleware
+@app.middleware("http")
+async def prometheus_metrics(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    
+    REQUEST_COUNT.labels(method=request.method, endpoint=str(request.url.path), http_status=response.status_code).inc()
+    REQUEST_LATENCY.labels(endpoint=str(request.url.path)).observe(process_time)
+    
+    logger.info(f"Request to {request.url} took {process_time:.2f} seconds.")
+    return response
 
-@app.post("/summarization")
-def summarization(request: RequestModel):
-    text_to_summarize = request.input
+@app.get("/metrics")
+def metrics():
+    return Response(content=generate_latest(), media_type="text/plain")
 
-    max_lenght = len(text_to_summarize.split())*0.25
-    if len(text_to_summarize.split()) < 25: 
-        return {"error": "Input text is too short for summarization. Please provide a longer text."}
+# Import routes
+from routes import summarization, translate, predict, question_answering, generate_text, healthcheck, images
 
-    try:
-        summary = pipe(text_to_summarize, max_length=max_lenght, min_length=25, do_sample=False)
-        if not summary or "summary_text" not in summary[0]:
-            raise ValueError("Model failed to generate a summary.")
-        
-        summary_text = summary[0]['summary_text']
-        return {"input": text_to_summarize, "summarization": summary_text}
-    except Exception as e:
-        return {"error": str(e)}
+app.include_router(summarization.router)
+app.include_router(translate.router)
+app.include_router(predict.router)
+app.include_router(question_answering.router)
+app.include_router(generate_text.router)
+app.include_router(healthcheck.router)
+app.include_router(images.router)
 
-@app.get("/healthcheck")
-def healthcheck():
-    return {"status": "ok"}
+from exception_handlers import http_exception_handler, validation_exception_handler, global_exception_handler
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException as StarletteHTTPException
+
+app.add_exception_handler(StarletteHTTPException, http_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(Exception, global_exception_handler)
+
+from middlewares.logging_middleware import LoggingMiddleware
+
+app.add_middleware(LoggingMiddleware)
