@@ -1,7 +1,5 @@
- import { chat1, chat2, chat3, chat4, chat5, chat6 } from "../assets"
+ import { chat1, chat2, chat3, chat4, chat5, chat6, chat7 } from "../assets"
  
- const apiIn = process.env.GPT_API_IN;
-const apiOut = process.env.GPT_API_OUT;
  export const navLinks = [
     {
       id: "about",
@@ -34,7 +32,7 @@ const apiOut = process.env.GPT_API_OUT;
       link: "/model/1",
       quickTip: "Cześć jestem Helsinki. Napisz coś po polsku a przetłumaczę to na angielski.",
       imageUrl: chat2,
-      title: "Helsinki ",
+      title: "Helsinki pl-eng",
       description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
     },
     {
@@ -43,7 +41,7 @@ const apiOut = process.env.GPT_API_OUT;
       link: "/model/2",
       quickTip: "Witaj jestem J-hartman. Napisz mi jak się czuejsz a ocenię twoje emocje",
       imageUrl: chat3,
-      title: "J-hartmann",
+      title: "Emotion Classifier",
       description : "j-hartmann/emotion-english-distilroberta-base to model DistilRoBERTa, przystosowany do analizy emocji w anglojęzycznych tekstach. Skupia się na klasyfikacji emocji, takich jak radość, smutek, złość czy strach, oferując szybsze i bardziej efektywne predykcje w porównaniu do pełnej wersji RoBERTa, co czyni go użytecznym narzędziem w analizie sentymentu.",
     },
     {
@@ -86,11 +84,82 @@ const apiOut = process.env.GPT_API_OUT;
       id: "7",
       type: "chat",
       link: "/model/7",
-      imageUrl: chat6,
-      quickTip: "Hej, jestem stable defusion, wygeneruję dla ciebie obraz.",
-      title: "stable defusion",
-      description: ""
+      imageUrl: chat7,
+      quickTip: "Hej, jestem stable diffusion, wygeneruję dla ciebie obraz.",
+      title: "stable diffusion",
+      description: "Stable Diffusion to model generowania obrazów, który wykorzystuje sztuczną inteligencję do tworzenia realistycznych wizualizacji na podstawie wskazówek użytkownika. Jest idealnym narzędziem dla artystów i projektantów pragnących przekształcić swoje pomysły w unikalne obrazy."
     },
+    {
+      id: "8",
+      type: "chat",
+      link: "/model/8",
+      quickTip: "Cześć, jestem Toxicity Classifier. Napisz coś, a ocenię, czy to jest toksyczne.",
+      imageUrl: chat3,
+      title: "Toxicity Classifier",
+      description: "Model do klasyfikacji toksyczności, który analizuje teksty i ocenia, czy zawierają one obraźliwe lub szkodliwe treści. Używa zaawansowanych algorytmów do identyfikacji toksycznych zachowań w komunikacji."
+  },
+  {
+      id: "9",
+      type: "chat",
+      link: "/model/9",
+      quickTip: "Hej, jestem Paraphraser. Przekształcę twój tekst w nowe sformułowanie.",
+      imageUrl: chat3,
+      title: "Paraphraser",
+      description: "Model do parafrazowania, który przekształca teksty w nowe sformułowania, zachowując ich pierwotne znaczenie. Idealny do tworzenia unikalnych treści na podstawie istniejących tekstów."
+  },
+  {
+      id: "10",
+      type: "chat",
+      link: "/model/10",
+      quickTip: "Cześć, jestem Sentiment Analyzer. Powiedz mi, co myślisz, a ocenię twoje uczucia.",
+      imageUrl: chat3,
+      title: "Sentiment Analyzer",
+      description: "Model analizy sentymentu, który ocenia emocje wyrażone w tekstach. Używa zaawansowanych technik przetwarzania języka naturalnego do identyfikacji pozytywnych, negatywnych lub neutralnych emocji."
+  },
+  {
+      id: "11",
+      type: "chat",
+      link: "/model/11",
+      quickTip: "Hej, jestem Topic Classifier. Powiedz mi, o czym jest twój tekst.",
+      imageUrl: chat3,
+      title: "Topic Classifier",
+      description: "Model klasyfikacji tematów, który identyfikuje główne tematy w tekstach. Używa algorytmów uczenia maszynowego do analizy treści i przypisywania odpowiednich etykiet."
+  },
+  {
+      id: "12",
+      type: "chat",
+      link: "/model/12",
+      quickTip: "Cześć, jestem Zero-Shot Classifier. Powiedz mi, o czym jest twój tekst, a ja to ocenię.",
+      imageUrl: chat3,
+      title: "Zero-Shot Classifier",
+      description: "Model klasyfikacji zero-shot, który potrafi przypisywać etykiety do tekstów bez wcześniejszego treningu na tych konkretnych etykietach. Używa zaawansowanych technik do analizy kontekstu."
+  },
+  {
+      id: "13",
+      type: "chat",
+      link: "/model/13",
+      quickTip: "Hej, jestem NER Model. Powiedz mi, a zidentyfikuję istotne jednostki w twoim tekście.",
+      imageUrl: chat3,
+      title: "NER Model",
+      description: "Model rozpoznawania nazwanych jednostek (NER), który identyfikuje i klasyfikuje istotne jednostki w tekstach, takie jak osoby, organizacje czy lokalizacje. Używa zaawansowanych algorytmów do analizy tekstu i wydobywania kluczowych informacji."
+  },
+  {
+    id: "14",
+    type: "chat",
+    link: "/model/14",
+    quickTip: "Cześć jestem Helsinki. Napisz coś po angielsku a przetłumaczę to na niemiecki.",
+    imageUrl: chat2,
+    title: "Helsinki eng-ger",
+    description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
+  },{
+  id: "15",
+  type: "chat",
+  link: "/model/15",
+  quickTip: "Cześć jestem Helsinki. Napisz coś po angielsku a przetłumaczę to na hiszpański.",
+  imageUrl: chat2,
+  title: "Helsinki eng-esp",
+  description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
+},
   ];
   
 

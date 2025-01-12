@@ -13,9 +13,9 @@ const ModelChatComponent = ({ ModelId }) => {
     const chatEndRef = useRef(null);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false); // Track button disabled state
 
-    // Scroll to the bottom when new messages are added
+
     useEffect(() => {
-        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, [messages]);
 
     const handleSendMessage = () => {
@@ -63,13 +63,18 @@ const ModelChatComponent = ({ ModelId }) => {
                             duration: 0.5,
                         }}
                     >       
-                    {msg.text.startsWith("<img") ? (
-                            // If the message is an image tag, render it as an image
-                            <div dangerouslySetInnerHTML={{ __html: msg.text }} />
-                        ) : (
-                            // Otherwise, render the text
-                            msg.text
-                        )}
+                            {msg.text.startsWith("<img") ? (
+                        <div>
+                            <img 
+                                key={msg.text}  // Użyj całego tekstu jako unikalnego klucza
+                                src={msg.text.match(/src="([^"]+)"/)[1]} // Wydobycie źródła obrazu z tagu
+                                alt="dynamic-image" 
+                                className="message-image" // Możesz dodać klasę CSS do stylizacji obrazka
+                            />
+                        </div>
+                    ) : (
+                        msg.text
+                    )}
                     </motion.div>
                 ))}
                 {loading && (

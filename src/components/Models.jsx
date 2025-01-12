@@ -30,7 +30,7 @@ const  ModelCard = ({ index, imageUrl, title, description }) => {
               {description}
             </p>
             <p className='mt-3 text-white text-[14px] text-center'>
-            <Link to={`/ANS-AI-DEMO/model/${index}`} className='flex items-center justify-center'>
+            <Link to={`/model/${index}`} className='flex items-center justify-center'>
               Skorzystaj z modelu <img className="w-5 h-5 float-right mx-2 cursor-pointer invert" src={next} alt="next" />
             </Link>
           </p>
@@ -55,7 +55,7 @@ const ModelsSection = () => {
 
     </motion.p>
 
-    <div className=' mt-20 flex flex-wrap gap-20 justify-center items-center'>
+    <div className=' mt-20 flex flex-wrap gap-20 justify-center items-center h-screen overflow-auto'>
       {Models.map((chat, index) => (<ModelCard key={Models.title} index={index} {...chat} />))}
     </div>
    </>

@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation(); // Get the current path
 
   // Determine if the current path matches '/model/:id'
-  const isModelDetailPage = location.pathname.startsWith('/ANS-AI-DEMO/model');
+  const isModelDetailPage = location.pathname.startsWith('/model');
 
   // Function to dynamically render nav links based on current path
   const renderLinks = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
           } hover:text-white text-[18px] font-medium cursor-pointer`}
           onClick={() => setActive(model.title)}
         >
-          <Link to={`/ANS-AI-DEMO/model/${model.id}`}>{model.title}</Link>
+          <Link to={`/model/${model.id}`}>{model.title}</Link>
         </li>
       ));
     }
@@ -45,7 +45,7 @@ const Navbar = () => {
     <nav className={'${styles.paddingX} w-full flex items-center py-1 fixed top-0 z-20 bg-glass'}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
-          to='/ANS-AI-DEMO/'
+          to='/'
           className='flex items-center gap-2'
           onClick={() => {
             setActive('');
@@ -58,28 +58,58 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className='list-none hidden xl:flex flex-row gap-10'>
-          {/* Render links dynamically based on the current route */}
-          {renderLinks()}
-        </ul>
 
-        {/* Mobile menu */}
-        <div className='xl:hidden flex flex-1 justify-end items-center'>
-          <input id="checkbox2" type="checkbox" checked={toggle} />
-          <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
-            onClick={() => setToggle(!toggle)}>
-            <div id="bar4" className="bars"></div>
-            <div id="bar5" className="bars"></div>
-            <div id="bar6" className="bars"></div>
-          </label>
+       
+        {isModelDetailPage && (
+          <>
+        <ul className='list-none hidden flex-row gap-10'>
+        {/* Render links dynamically based on the current route */}
+        {renderLinks()}
+      </ul>
+        <div className='flex flex-1 justify-end items-center'>
+        <input id="checkbox2" type="checkbox" checked={toggle} />
+        <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
+          onClick={() => setToggle(!toggle)}>
+          <div id="bar4" className="bars"></div>
+          <div id="bar5" className="bars"></div>
+          <div id="bar6" className="bars"></div>
+        </label>
 
-          {/* Mobile menu content */}
-          <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
-            <ul className='list-none flex justify-end items-start flex-col gap-4'>
-              {renderLinks()}
-            </ul>
-          </div>
+        {/* Mobile menu content */}
+        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+          <ul className='list-none flex justify-end items-start flex-col gap-4'>
+            {renderLinks()}
+          </ul>
         </div>
+      </div>
+      </>
+        )}
+
+      {!isModelDetailPage && (
+        <>
+               <ul className='list-none hidden xl:flex flex-row gap-10'>
+        {/* Render links dynamically based on the current route */}
+        {renderLinks()}
+      </ul>
+        <div className='xl:hidden flex flex-1 justify-end items-center'>
+        <input id="checkbox2" type="checkbox" checked={toggle} />
+        <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
+          onClick={() => setToggle(!toggle)}>
+          <div id="bar4" className="bars"></div>
+          <div id="bar5" className="bars"></div>
+          <div id="bar6" className="bars"></div>
+        </label>
+
+        {/* Mobile menu content */}
+        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+          <ul className='list-none flex justify-end items-start flex-col gap-4'>
+            {renderLinks()}
+          </ul>
+        </div>
+      </div>
+      </>
+        )}
+
       </div>
     </nav>
   );
