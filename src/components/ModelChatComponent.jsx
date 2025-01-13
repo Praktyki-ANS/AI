@@ -103,6 +103,7 @@ const ModelChatComponent = ({ ModelId }) => {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Zadaj mi pytanie..."
                     className="input-textarea"
+                    autoFocus
                 />
                 <button
                     onClick={handleSendMessage}

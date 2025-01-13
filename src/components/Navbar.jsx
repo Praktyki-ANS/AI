@@ -20,7 +20,10 @@ const Navbar = () => {
           className={`${
             active === model.title ? 'text-white' : 'text-secondary'
           } hover:text-white text-[18px] font-medium cursor-pointer`}
-          onClick={() => setActive(model.title)}
+          onClick={() => {
+            setActive(model.title);
+            setToggle(!toggle);
+          }}
         >
           <Link to={`/model/${model.id}`}>{model.title}</Link>
         </li>
@@ -101,8 +104,10 @@ const Navbar = () => {
         </label>
 
         {/* Mobile menu content */}
-        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
-          <ul className='list-none flex justify-end items-start flex-col gap-4'>
+        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+        >
+          <ul className='list-none flex justify-end items-start flex-col gap-4'
+          >
             {renderLinks()}
           </ul>
         </div>

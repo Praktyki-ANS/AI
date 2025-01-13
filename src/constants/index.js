@@ -160,6 +160,25 @@
   title: "Helsinki eng-esp",
   description : "Model Helsinki-NLP, oparty na architekturze transformera, skutecznie tłumaczy, analizując kontekst w całym zdaniu. Dzięki treningowi na dużych zbiorach danych tłumaczeniowych rozumie strukturę języka i zależności między słowami, zapewniając wysoką jakość tłumaczeń, zwłaszcza w przypadku złożonych zdań.",
 },
+{
+  "id": "16",
+  "type": "chat",
+  "link": "/model/16",
+  "quickTip": "Cześć, jestem model DistilBART. Napisz coś, a ja podsumuję to w krótszej formie.",
+  "imageUrl": chat6,
+  "title": "DistilBART Summarization",
+  "description": "Model DistilBART, oparty na uproszczonej wersji architektury BART, skutecznie podsumowuje teksty, analizując ich kontekst. Dzięki mniejszej liczbie parametrów w porównaniu do pełnej wersji BART, model jest szybszy, ale nadal zapewnia wysoką jakość streszczeń. Idealny do generowania zwięzłych podsumowań długich tekstów."
+},
+{
+  "id": "17",
+  "type": "chat",
+  "link": "/model/17",
+  "quickTip": "Cześć, jestem model Cnicu. Napisz coś, a ja przygotuję dla ciebie podsumowanie tekstu.",
+  "imageUrl": chat6,
+  "title": "Cnicu Summarization",
+  "description": "Model Cnicu jest specjalistycznym modelem do podsumowywania tekstów, zoptymalizowanym pod kątem analizowania długich i skomplikowanych tekstów. Dzięki zaawansowanej analizie semantycznej i syntaktycznej, model generuje streszczenia, które zachowują najistotniejsze informacje, eliminując zbędne szczegóły."
+}
+
   ];
   
 

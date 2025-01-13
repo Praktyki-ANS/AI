@@ -69,6 +69,13 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
         case 15: // New endpoint for named entity recognition
             endpoint = "/translate/en-esp";
             break;  
+            case 16: // New endpoint for named entity recognition
+            endpoint = "/summarization/distilbart";
+            break;  
+            case 17: // New endpoint for named entity recognition
+            endpoint = "/summarization/cnicu";
+            break;  
+
         default:
             endpoint = "/healthcheck";
     }
@@ -144,6 +151,12 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
                 break;
                 case 15:  // Translation
                 message = response.data.translation || "No translation available.";
+                break;
+                case 16:  // Summarization
+                message = response.data.summarization || "No summary generated.";
+                break;
+                case 17:  // Summarization
+                message = response.data.summarization || "No summary generated.";
                 break;
                 
                 
