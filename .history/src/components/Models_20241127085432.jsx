@@ -31,7 +31,7 @@ const  ModelCard = ({ index, imageUrl, title, description }) => {
             </p>
             <p className='mt-3 text-white text-[14px] text-center'>
             <Link to={`/ANS-AI-DEMO/model/${index}`} className='flex items-center justify-center'>
-              Skorzystaj z modelu <img className="w-5 h-5 float-right mx-2 cursor-pointer invert" src={next} alt="next" />
+              Użyj modelu <img className="w-5 h-5 float-right mx-2 cursor-pointer invert" src={next} alt="next" />
             </Link>
           </p>
           </div>
@@ -43,15 +43,19 @@ const ModelsSection = () => {
   return (
     <> 
     <motion.div variants={textVariant()}>
-      <h2 className={styles.sectionHeadText}>
+      <p className={styles.sectionSubText}>
         Modele
+      </p>
+      <h2 className={styles.sectionHeadText}>
+        Sprawdź dotępne
       </h2>
     </motion.div>
     <motion.p
     variants={
       fadeIn("", "", 0.3, 2)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-     >Wybierz jeden z dostępnych modeli i rozpocznij korzystanie z jego możliwości już teraz!
+     >Na naszej platformie możesz czatować z różnymi modelami LLM (Large Language Models), 
+     a także skorzystć z możliwości innych modeli na przykład do analizy dokumentów.
 
     </motion.p>
 

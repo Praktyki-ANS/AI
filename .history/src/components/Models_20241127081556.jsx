@@ -30,8 +30,8 @@ const  ModelCard = ({ index, imageUrl, title, description }) => {
               {description}
             </p>
             <p className='mt-3 text-white text-[14px] text-center'>
-            <Link to={`/ANS-AI-DEMO/model/${index}`} className='flex items-center justify-center'>
-              Skorzystaj z modelu <img className="w-5 h-5 float-right mx-2 cursor-pointer invert" src={next} alt="next" />
+            <Link to={`/ANS-AI-DEMO/chat/${index}`} className='flex items-center justify-center'>
+              Czatuj <img className="w-5 h-5 float-right mx-2 cursor-pointer invert" src={next} alt="next" />
             </Link>
           </p>
           </div>
@@ -43,23 +43,27 @@ const ModelsSection = () => {
   return (
     <> 
     <motion.div variants={textVariant()}>
+      <p className={styles.sectionSubText}>
+        Czaty
+      </p>
       <h2 className={styles.sectionHeadText}>
-        Modele
+        Przegląd modeli
       </h2>
     </motion.div>
     <motion.p
     variants={
       fadeIn("", "", 0.3, 2)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-     >Wybierz jeden z dostępnych modeli i rozpocznij korzystanie z jego możliwości już teraz!
+     >Na naszej platformie możesz czatować z różnymi modelami LLM (Large Language Models), a także z naszym własnym projektem studenckim, LLM Ans Bot, w celu ich porównania. 
+     Użytykownicy mogą w ten sposób interaktywnie sprawdzić możliwości i ograniczenia poszczególnych modeli, co pozwala na lepsze zrozumienie ich zalet i wad.
 
     </motion.p>
 
-    <div className=' mt-20 flex flex-wrap gap-20 justify-center items-center'>
+    <div className='ml-20 mt-20 flex flex-wrap gap-20'>
       {Models.map((chat, index) => (<ModelCard key={Models.title} index={index} {...chat} />))}
     </div>
    </>
   );
 };
 
-export default  SectionWrapper(ModelsSection, 'models');
+export default  SectionWrapper(ModelsSection, 'chats');

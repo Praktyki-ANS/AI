@@ -43,15 +43,19 @@ const ModelsSection = () => {
   return (
     <> 
     <motion.div variants={textVariant()}>
-      <h2 className={styles.sectionHeadText}>
+      <p className={styles.sectionSubText}>
         Modele
+      </p>
+      <h2 className={styles.sectionHeadText}>
+        Sprawdź 
       </h2>
     </motion.div>
     <motion.p
     variants={
       fadeIn("", "", 0.3, 2)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-     >Wybierz jeden z dostępnych modeli i rozpocznij korzystanie z jego możliwości już teraz!
+     >Na naszej platformie możesz czatować z różnymi modelami LLM (Large Language Models), 
+     a także skorzystć z możliwości innych modeli na przykład do analizy dokumentów.
 
     </motion.p>
 

@@ -12,7 +12,7 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={
+          <Route path="/ANS-AI-DEMO/" element={
             <>
               <Hero />
               <div className="relative">
@@ -26,7 +26,7 @@ const App = () => {
             </>
           } />
 
-          <Route path="/model/:id" element={
+          <Route path="/ANS-AI-DEMO/model/:id" element={
             <>
               <ModelDetails />
               <ParticlesCanvas />

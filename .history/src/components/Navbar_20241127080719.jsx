@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { navLinks, Models } from '../constants';  // Import model array from your constants
+import { navLinks, Models } from '../constants';  // Import Chats array from your constants
 import { logo } from '../assets';
 
 const Navbar = () => {
@@ -8,12 +8,12 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation(); // Get the current path
 
-  // Determine if the current path matches '/model/:id'
-  const isModelDetailPage = location.pathname.startsWith('/ANS-AI-DEMO/model');
+  // Determine if the current path matches '/chat/:id'
+  const isChatDetailPage = location.pathname.startsWith('/ANS-AI-DEMO/chat');
 
   // Function to dynamically render nav links based on current path
   const renderLinks = () => {
-    if (isModelDetailPage) {
+    if (isChatDetailPage) {
       return Models.map((model) => (
         <li
           key={model.id}
@@ -22,7 +22,7 @@ const Navbar = () => {
           } hover:text-white text-[18px] font-medium cursor-pointer`}
           onClick={() => setActive(model.title)}
         >
-          <Link to={`/ANS-AI-DEMO/model/${model.id}`}>{model.title}</Link>
+          <Link to={`/ANS-AI-DEMO/chat/${model.id}`}>{model.title}</Link>
         </li>
       ));
     }
@@ -58,13 +58,13 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className='list-none hidden xl:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-10'>
           {/* Render links dynamically based on the current route */}
           {renderLinks()}
         </ul>
 
         {/* Mobile menu */}
-        <div className='xl:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:hidden flex flex-1 justify-end items-center'>
           <input id="checkbox2" type="checkbox" checked={toggle} />
           <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
             onClick={() => setToggle(!toggle)}>

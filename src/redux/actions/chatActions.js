@@ -28,7 +28,7 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
             endpoint = "/translate/pl-en";
             break;
         case 2:
-            endpoint = "/predict/emotions"; // Updated endpoint for emotion classifier
+            endpoint = "/predict"; // Emotion classifier
             break;
         case 3:
             endpoint = "/question-answering";
@@ -44,30 +44,6 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
             break;
         case 7: 
             endpoint = "/images"; // Image generation
-            break;  
-        case 8: // New endpoint for toxicity classification
-            endpoint = "/predict/toxicity";
-            break;
-        case 9: // New endpoint for paraphrasing
-            endpoint = "/predict/paraphrase";
-            break;
-        case 10: // New endpoint for sentiment analysis
-            endpoint = "/predict/sentiment";
-            break;
-        case 11: // New endpoint for topic classification
-            endpoint = "/predict/topic";
-            break;
-        case 12: // New endpoint for zero-shot classification
-            endpoint = "/predict/zero-shot";
-            break;
-        case 13: // New endpoint for named entity recognition
-            endpoint = "/predict/ner";
-            break;
-        case 14: // New endpoint for named entity recognition
-            endpoint = "/translate/en-ger";
-            break;   
-        case 15: // New endpoint for named entity recognition
-            endpoint = "/translate/en-esp";
             break;  
         default:
             endpoint = "/healthcheck";
@@ -85,8 +61,6 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
         requestBody = { context, question };
     } else if (modelId === 7) {  // Image generation
         requestBody = { prompt: input }; // Correctly format the request body for image generation
-    } else if ([8, 9, 10, 11, 12, 13].includes(modelId)) { // For new models
-        requestBody = { texts: [input] }; // Use the same format for toxicity, paraphrasing, sentiment, topic, zero-shot, and NER
     }
 
     try {
@@ -104,7 +78,7 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
                 message = response.data.translation || "No translation available.";
                 break;
             case 2:  // Emotion classifier
-                message = response.data.predictions?.map(e => `${e.label}: ${e.score}`).join(", ") || "No emotions detected.";
+                message = response.data.emotions?.map(e => `${e.label}: ${e.score}`).join(", ") || "No emotions detected.";
                 break;
             case 3:  // Question answering
                 message = response.data.answer || "No answer available.";
@@ -119,34 +93,9 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
                 message = response.data.translation || "No translation available.";
                 break;
             case 7:  // Image generation 
+                // Assuming the response contains an array of image paths
                 message = response.data.images?.map((img, index) => `<img src="${img}" alt="Generated Image ${index + 1}" />`).join("") || "No images generated.";
                 break;
-            case 8:  // Toxicity classification
-                message = response.data.predictions?.map(e => `Toxicity: ${e.label}, Score: ${e.score}`).join(", ") || "No toxicity predictions.";
-                break;
-            case 9:  // Paraphrasing
-                message = response.data.predictions?.map(e => `Paraphrase: ${e.paraphrase}`).join(", ") || "No paraphrases generated.";
-                break;
-            case 10: // Sentiment analysis
-                message = response.data.predictions?.map(e => `Sentiment: ${e.label}, Score: ${e.score}`).join(", ") || "No sentiment predictions.";
-                break;
-            case 11: // Topic classification
-                message = response.data.predictions?.map(e => `Topic: ${e.label}, Score: ${e.score}`).join(", ") || "No topic predictions.";
-                break;
-            case 12: // Zero-shot classification
-                message = response.data.predictions?.map(e => `Zero-shot label: ${e.label}, Score: ${e.score}`).join(", ") || "No zero-shot predictions.";
-                break;
-            case 13: // Named entity recognition
-                message = response.data.predictions?.map(e => `Entity: ${e.entity}, Label: ${e.label}`).join(", ") || "No entities recognized.";
-                break;
-                case 14:  // Translation
-                message = response.data.translation || "No translation available.";
-                break;
-                case 15:  // Translation
-                message = response.data.translation || "No translation available.";
-                break;
-                
-                
             default:
                 message = "No valid model response.";
         }
@@ -154,7 +103,7 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
         // Dispatch the success action for the model response only
         dispatch({
             type: "FETCH_MESSAGE_SUCCESS",
-            payload: { text: message, isUser: false }, // Model response
+            payload: { text: message, isUser:  false }, // Model response
         });
 
     } catch (error) {

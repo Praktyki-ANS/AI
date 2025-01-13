@@ -317,23 +317,8 @@
   object-fit: cover;
   overflow: hidden;
 }
-/* Styl dla przewijania */
 *::-webkit-scrollbar {
-  width: 8px; /* Szerokość paska przewijania */
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #888; /* Kolor uchwytu paska przewijania */
-  border-radius: 10px; /* Zaokrąglenie uchwytu */
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Kolor uchwytu po najechaniu */
-}
-
-*::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Kolor tła paska przewijania */
-  border-radius: 10px; /* Zaokrąglenie tła */
+  display: none;
 }
 .Container-form {
   transform: skewX(-6deg);

@@ -51,7 +51,7 @@ const ModelsSection = () => {
     variants={
       fadeIn("", "", 0.3, 2)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-     >Wybierz jeden z dostępnych modeli i rozpocznij korzystanie z jego możliwości już teraz!
+     >Wybierz swój model
 
     </motion.p>
 
