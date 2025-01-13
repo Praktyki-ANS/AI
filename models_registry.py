@@ -10,6 +10,8 @@ def load_models():
     print("Loading models from Hugging Face")
     models["summarization.bart"] = pipeline("summarization", model="facebook/bart-large-cnn", clean_up_tokenization_spaces=True)
     models["summarization.pegasus"] = pipeline("summarization", model="google/pegasus-xsum")
+    models["summarization.distilbart"] = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+    models["summarization.cnicu"] = pipeline("summarization", model="cnicu/t5-small-booksum")
     models["pl-en"] = pipeline("translation", model="Helsinki-NLP/opus-mt-pl-en", clean_up_tokenization_spaces=True)
     models["en-pl"] = pipeline("translation", model="sdadas/mt5-base-translator-en-pl")
     models["en-ger"] = pipeline("translation", model="Helsinki-NLP/opus-mt-en-de")
