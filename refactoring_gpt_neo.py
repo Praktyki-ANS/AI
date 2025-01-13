@@ -1,5 +1,10 @@
 from fastapi import HTTPException
 
+
+models = GPT-neo-125M
+
+
+
 def generate_text2(input_text: str, models: dict) -> dict:
     try:
         model = models.get("text_generation")
