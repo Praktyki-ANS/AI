@@ -32,7 +32,7 @@ def generate_text_endpoint(request: RequestModel):
         return {"error": str(e)}
 
 
-@app.post("/generate-text3")
+@router.post("/generate-text3")
 def generate_text_endpoint(request: RequestModel):
     try:
         model = models.get("text_generation3")
