@@ -1,16 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends
-from pydantic import BaseModel
-from refactoring_gemini import generate_text2  
+from refactoring_gpt_neo import generate_text2  
 
-
-
-GEMINI_API_KEY = "AIzaSyDyzX6WJ6LDsDisJWAgF4xA2dRENwqMH8o"
-
-
-def get_api_key():
-    if not GEMINI_API_KEY:
-        raise HTTPException(status_code=500, detail="Gemini API key is not configured.")
-    return GEMINI_API_KEY
 
 app = FastAPI()
 
