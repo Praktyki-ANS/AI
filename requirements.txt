@@ -8,6 +8,6 @@ transformers==4.44.2
 pytest
 pytest-cov 
 httpx==0.24.1
-sentence-piece==0.1.96
-protobuf==3.19.4
+sentence-piece
+protobuf
 fastapi[standard]
