@@ -17,6 +17,8 @@ def load_models():
     models["emotion_classifier"] = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
     models["question_answering"] = pipeline("question-answering", model="deepset/roberta-base-squad2")
     models["text_generation"] = pipeline("text-generation", model="gpt2")
+    models["text_generation2"] = pipeline("text-generation", model="gpt_neo")
+    models["text_generation3"] = pipeline("text-generation", model="DialoGPT")
     models["toxicity_classifier"] = pipeline("text-classification", model="unitary/toxic-bert")
     models["paraphrasing_model"] = pipeline("text2text-generation", model="Vamsi/T5_Paraphrase_Paws")
     models["sentiment_analysis"] = pipeline("text-classification", model="nlptown/bert-base-multilingual-uncased-sentiment")
