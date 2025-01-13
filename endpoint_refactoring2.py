@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, Depends
 from refactoring_gpt_neo import generate_text2  
 
-
+models = GPT-neo-125M
 app = FastAPI()
 
 
