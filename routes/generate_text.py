@@ -34,7 +34,7 @@ def generate_text_endpoint(request: RequestModel):
 
 @app.post("/generate-text3")
 def generate_text_endpoint(request: RequestModel):
-    ttry:
+    try:
         model = models.get("text_generation3")
         if not model:
             raise HTTPException(status_code=503, detail="Text generation model not available")
