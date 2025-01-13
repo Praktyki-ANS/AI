@@ -5,7 +5,7 @@ from refactoring_gpt_neo import generate_text2
 app = FastAPI()
 
 
-@app.post("/generate-text")
+@app.post("/generate-text2")
 def generate_text_endpoint(request: RequestModel):
     try:
         result = generate_text(request.input, models)
