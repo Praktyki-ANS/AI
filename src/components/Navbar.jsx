@@ -69,22 +69,43 @@ const Navbar = () => {
         {/* Render links dynamically based on the current route */}
         {renderLinks()}
       </ul>
-        <div className='flex flex-1 justify-end items-center'>
-        <input id="checkbox2" type="checkbox" checked={toggle} />
-        <label className="toggle toggle2" htmlFor="checkbox2" alt="menu"
-          onClick={() => setToggle(!toggle)}>
-          <div id="bar4" className="bars"></div>
-          <div id="bar5" className="bars"></div>
-          <div id="bar6" className="bars"></div>
-        </label>
 
-        {/* Mobile menu content */}
-        <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
-          <ul className='list-none flex justify-end items-start flex-col gap-4'>
-            {renderLinks()}
-          </ul>
-        </div>
-      </div>
+      <div className="flex flex-1 justify-end items-center">
+  {/* Checkbox do kontrolowania toggle */}
+  <input
+    id="checkbox2"
+    type="checkbox"
+    checked={toggle}
+    onChange={() => setToggle(!toggle)} // Upewnij się, że stan jest aktualizowany
+    className="hidden" // Ukrywamy checkboxa, używamy tylko label do kontroli
+  />
+
+  {/* Label (ikona hamburgera) */}
+  <label
+    className="toggle toggle2 cursor-pointer"
+    htmlFor="checkbox2"
+    alt="menu"
+  >
+    <div id="bar4" className="bars"></div>
+    <div id="bar5" className="bars"></div>
+    <div id="bar6" className="bars"></div>
+  </label>
+
+  {/* Mobile menu content */}
+  <div
+    className={`${
+      !toggle ? "hidden" : "flex"
+    } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 max-h-[70vh]  z-10 rounded-xl`}
+    // Dodatkowo możesz ustawić dynamiczną wysokość, jeśli potrzebujesz
+  >
+    <div className='max-h-[70vh] overflow-y-auto'>
+      <ul className="list-none flex justify-end items-start flex-col gap-4">
+        {renderLinks()}
+      </ul>
+    </div>
+  </div>
+</div>
+
       </>
         )}
 

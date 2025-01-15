@@ -75,8 +75,13 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
             case 17: // New endpoint for named entity recognition
             endpoint = "/summarization/cnicu";
             break;  
-
-        default:
+            case 18:
+            endpoint = "/generate-text2";
+            break;
+            case 19:
+            endpoint = "/generate-text3";
+            break;
+            default:
             endpoint = "/healthcheck";
     }
 
@@ -105,64 +110,65 @@ export const fetchModelResponse = (input, modelId) => async (dispatch) => {
         // Process the response based on modelId
         switch (modelId) {
             case 0:  // Summarization
+            case 5:  // Summarization/pegasus
+            case 16: // Summarization
+            case 17: // Summarization
                 message = response.data.summarization || "No summary generated.";
                 break;
+        
             case 1:  // Translation
+            case 6:  // Translation
+            case 14: // Translation
+            case 15: // Translation
                 message = response.data.translation || "No translation available.";
                 break;
+        
             case 2:  // Emotion classifier
                 message = response.data.predictions?.map(e => `${e.label}: ${e.score}`).join(", ") || "No emotions detected.";
                 break;
+        
             case 3:  // Question answering
                 message = response.data.answer || "No answer available.";
                 break;
+        
             case 4:  // Text generation
+            case 18: // Text generation
+            case 19: // Text generation
                 message = response.data.generated_text || "No text generated.";
                 break;
-            case 5:  // Summarization/pegasus
-                message = response.data.summarization || "No summary generated.";
-                break;
-            case 6:  // Translation
-                message = response.data.translation || "No translation available.";
-                break;
+        
             case 7:  // Image generation 
                 message = response.data.images?.map((img, index) => `<img src="${img}" alt="Generated Image ${index + 1}" />`).join("") || "No images generated.";
                 break;
+        
             case 8:  // Toxicity classification
                 message = response.data.predictions?.map(e => `Toxicity: ${e.label}, Score: ${e.score}`).join(", ") || "No toxicity predictions.";
                 break;
+        
             case 9:  // Paraphrasing
                 message = response.data.predictions?.map(e => `Paraphrase: ${e.paraphrase}`).join(", ") || "No paraphrases generated.";
                 break;
+        
             case 10: // Sentiment analysis
                 message = response.data.predictions?.map(e => `Sentiment: ${e.label}, Score: ${e.score}`).join(", ") || "No sentiment predictions.";
                 break;
+        
             case 11: // Topic classification
                 message = response.data.predictions?.map(e => `Topic: ${e.label}, Score: ${e.score}`).join(", ") || "No topic predictions.";
                 break;
+        
             case 12: // Zero-shot classification
                 message = response.data.predictions?.map(e => `Zero-shot label: ${e.label}, Score: ${e.score}`).join(", ") || "No zero-shot predictions.";
                 break;
+        
             case 13: // Named entity recognition
                 message = response.data.predictions?.map(e => `Entity: ${e.entity}, Label: ${e.label}`).join(", ") || "No entities recognized.";
                 break;
-                case 14:  // Translation
-                message = response.data.translation || "No translation available.";
-                break;
-                case 15:  // Translation
-                message = response.data.translation || "No translation available.";
-                break;
-                case 16:  // Summarization
-                message = response.data.summarization || "No summary generated.";
-                break;
-                case 17:  // Summarization
-                message = response.data.summarization || "No summary generated.";
-                break;
-                
-                
+        
             default:
                 message = "No valid model response.";
         }
+        
 
         // Dispatch the success action for the model response only
         dispatch({

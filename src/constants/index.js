@@ -177,7 +177,27 @@
   "imageUrl": chat6,
   "title": "Cnicu Summarization",
   "description": "Model Cnicu jest specjalistycznym modelem do podsumowywania tekstów, zoptymalizowanym pod kątem analizowania długich i skomplikowanych tekstów. Dzięki zaawansowanej analizie semantycznej i syntaktycznej, model generuje streszczenia, które zachowują najistotniejsze informacje, eliminując zbędne szczegóły."
+},
+{
+  "id": "18",
+  "type": "chat",
+  "link": "/model/18",
+  "quickTip": "Hej, jestem modelem text-generation2. Możemy porozmawiać!",
+  "imageUrl": chat5,  
+  "title": "Text Generation 2",
+  "description": "Model text-generation2 jest zaawansowanym modelem generowania tekstu, opartym na technologii przetwarzania języka naturalnego. Wykorzystuje głębokie sieci neuronowe, aby generować tekst na podstawie zadanego wejścia, zapewniając naturalne, spójne i kontekstualne odpowiedzi w różnych dziedzinach."
+},
+{
+  "id": "19",
+  "type": "chat",
+  "link": "/model/19",
+  "quickTip": "Hej, jestem modelem text-generation3. Spróbujmy coś stworzyć!",
+  "imageUrl": chat5,  
+  "title": "Text Generation 3",
+  "description": "Model text-generation3 to jeszcze bardziej zaawansowana wersja generowania tekstu, która osiąga wyższy poziom spójności i trafności w odpowiedziach. Dzięki zastosowaniu najnowszych technik uczenia maszynowego model jest w stanie generować bardziej złożone i kontekstowe odpowiedzi, doskonale pasujące do różnych scenariuszy komunikacyjnych."
 }
+
+
 
   ];
   
