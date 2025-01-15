@@ -18,3 +18,28 @@ def generate_text(request: RequestModel):
         return {"input": request.input, "generated_text": generated[0]["generated_text"]}
     except Exception as e:
         return {"error": str(e)}
+
+@router.post("/generate-text2")
+def generate_text_endpoint(request: RequestModel):
+    try:
+        model = models.get("text_generation2")
+        if not model:
+            raise HTTPException(status_code=503, detail="Text generation model not available")
+
+        generated = model(request.input, max_length=50, num_return_sequences=1)
+        return {"input": request.input, "generated_text": generated[0]["generated_text"]}
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@router.post("/generate-text3")
+def generate_text_endpoint(request: RequestModel):
+    try:
+        model = models.get("text_generation3")
+        if not model:
+            raise HTTPException(status_code=503, detail="Text generation model not available")
+
+        generated = model(request.input, max_length=50, num_return_sequences=1)
+        return {"input": request.input, "generated_text": generated[0]["generated_text"]}
+    except Exception as e:
+        return {"error": str(e)}
