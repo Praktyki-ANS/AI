@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r /code/app/requirements.txt
 
 COPY . /code/app
 
-CMD ["fastapi", "run", "backend.py"]
+CMD ["fastapi", "run", "./backend.py"]
